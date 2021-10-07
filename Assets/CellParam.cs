@@ -7,6 +7,7 @@ public class CellParam : MonoBehaviour
 {
     public bool isDecorative = false;
     [SerializeField] private GameObject decor;
+    public int number = 0;
 
 
     private void Start()

@@ -16,14 +16,19 @@ public class ClickSystem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit[] hits = Physics.RaycastAll(ray, 100f);
-            for (int i = 0; i < hits.Length; i++)
+            Click();
+        }
+    }
+
+    private void Click()
+    {
+        Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray, 100f);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].collider.gameObject.CompareTag("Cell"))
             {
-                if (hits[i].collider.gameObject.CompareTag("Cell"))
-                {
-                    hits[i].collider.gameObject.GetComponent<OnClick>().OnTheClick();
-                }
+                hits[i].collider.gameObject.GetComponent<OnClick>().OnTheClick();
             }
         }
     }

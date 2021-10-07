@@ -35,6 +35,8 @@ public class grid : MonoBehaviour
             }
         }
         
+        
+        
         for (int i = 0; i < 5; i++)
         {
             var rand = Random.Range(0, GameObjects.Count);
@@ -46,8 +48,11 @@ public class grid : MonoBehaviour
             {
                 i--;
             }
-
-            
+        }
+        
+        for (int i = 0; i < GameObjects.Count; i++)
+        {
+            GameObjects[i].GetComponent<CellParam>().number = i;
         }
     }
 
