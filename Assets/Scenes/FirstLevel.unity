@@ -344,6 +344,7 @@ MonoBehaviour:
   gridSize: {x: 5, y: 5}
   cell: {fileID: 3903150759062961156, guid: 1a511a7fefe7d48ef8fe3417e9f7e697, type: 3}
   GameObjects: []
+  distance: 0.238
 --- !u!4 &1894792080
 Transform:
   m_ObjectHideFlags: 0

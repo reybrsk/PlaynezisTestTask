@@ -11,6 +11,7 @@ public class grid : MonoBehaviour
     public Vector2Int gridSize = Vector2Int.one*5;
     public GameObject cell;
     public List<GameObject> GameObjects;
+    [SerializeField,Range(0f,1f)] private float distance;
 
 
 
@@ -21,7 +22,7 @@ public class grid : MonoBehaviour
         {
             for (int y = 0; y < gridSize.y; y++)
             {
-                var gameObject = Instantiate(cell, new Vector3(x, 0, y), Quaternion.identity);
+                var gameObject = Instantiate(cell, new Vector3(x+distance*x, 0, y+distance*y), Quaternion.identity);
                 if ((x + y) % 2 != 0)
                 {
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
