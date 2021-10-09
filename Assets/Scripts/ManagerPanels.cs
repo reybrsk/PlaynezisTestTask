@@ -51,7 +51,7 @@ public class ManagerPanels : MonoBehaviour
         targetCellParam.houseVar = targetHouseVar;
         buildPanel.SetActive(false);
         targetCellParam.houseLevel = 1;
-
+        targetHouseVar = 0;
 
     }
 

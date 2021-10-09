@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ClickSystem : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class ClickSystem : MonoBehaviour
         RaycastHit[] hits = Physics.RaycastAll(ray, 100f);
         for (int i = 0; i < hits.Length; i++)
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
             if (hits[i].collider.gameObject.CompareTag("Cell"))
             {
                 hits[i].collider.gameObject.GetComponent<OnClick>().OnTheClick();

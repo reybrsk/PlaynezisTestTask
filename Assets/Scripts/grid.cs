@@ -16,13 +16,15 @@ public class grid : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         for (int x = 0; x < gridSize.x; x++)
         {
             for (int y = 0; y < gridSize.y; y++)
             {
                 var gameObject = Instantiate(cell, new Vector3(x+distance*x, 0, y+distance*y), Quaternion.identity);
+                
+                
                 if ((x + y) % 2 != 0)
                 {
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
@@ -57,11 +59,7 @@ public class grid : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 
     
 }
