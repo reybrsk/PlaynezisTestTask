@@ -8,6 +8,8 @@ public class ManagerPanels : MonoBehaviour
 
     [SerializeField] private GameObject buildPanel;
     [SerializeField] private GameObject upgradePanel;
+    [SerializeField] private GameObject gamePanel;
+    
     public int targetHouseVar = 0;
     private CellParam targetCellParam;
 
@@ -25,7 +27,7 @@ public class ManagerPanels : MonoBehaviour
     {
         OnClick.onCellClicked -= CellClickedHandler;
     }
-
+    
 
     public void SetHouseLevel()
     {

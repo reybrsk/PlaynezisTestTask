@@ -13,7 +13,7 @@ public class grid : MonoBehaviour
     public List<GameObject> GameObjects;
     [SerializeField,Range(0f,1f)] private float distance;
 
-
+    
 
     // Start is called before the first frame update
     void Awake()
