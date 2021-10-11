@@ -13,7 +13,7 @@ public class MenuScript : MonoBehaviour
       
       
       
-      PlayerPrefs.Save();
+      // PlayerPrefs.Save();
    }
 
    public void Load()

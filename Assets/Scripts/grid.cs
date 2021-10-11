@@ -10,7 +10,7 @@ public class grid : MonoBehaviour
 {
     public Vector2Int gridSize = Vector2Int.one*5;
     public GameObject cell;
-    public List<GameObject> GameObjects;
+    public List<GameObject> cells;
     [SerializeField,Range(0f,1f)] private float distance;
 
     
@@ -28,12 +28,12 @@ public class grid : MonoBehaviour
                 if ((x + y) % 2 != 0)
                 {
                     gameObject.GetComponent<Renderer>().material.color = Color.blue;
-                    GameObjects.Add(gameObject);
+                    cells.Add(gameObject);
                 }
                 else
                 {
                     gameObject.GetComponent<Renderer>().material.color = Color.green;
-                    GameObjects.Add(gameObject);
+                    cells.Add(gameObject);
                 }
             }
         }
@@ -42,10 +42,10 @@ public class grid : MonoBehaviour
         
         for (int i = 0; i < 5; i++)
         {
-            var rand = Random.Range(0, GameObjects.Count);
-            if (GameObjects[rand].GetComponent<CellParam>().isDecorative == false)
+            var rand = Random.Range(0, cells.Count);
+            if (cells[rand].GetComponent<CellParam>().isDecorative == false)
             {
-                GameObjects[rand].GetComponent<CellParam>().isDecorative = true;
+                cells[rand].GetComponent<CellParam>().isDecorative = true;
             }
             else
             {
@@ -53,9 +53,9 @@ public class grid : MonoBehaviour
             }
         }
         
-        for (int i = 0; i < GameObjects.Count; i++)
+        for (int i = 0; i < cells.Count; i++)
         {
-            GameObjects[i].GetComponent<CellParam>().number = i;
+            cells[i].GetComponent<CellParam>().number = i;
         }
     }
 
